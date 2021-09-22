@@ -11,6 +11,7 @@ namespace HospiEnCasa.App.Frontend.Pages
     {
         private string[] medicos ={"Dr Pepito Perez","Dra Maria Felix","Dr Chapatin"};
 
+    
         public List<string> ListaMedicos {get; set;}
 
         public void OnGet()
