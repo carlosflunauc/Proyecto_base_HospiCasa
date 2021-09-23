@@ -2,13 +2,26 @@
 @model HospiEnCasa.App.Frontend.Pages.ListModel
 @{
 }
-<h3>Bienvenidos al sistema de hospitalizacion en casa</h3>
+<!--<h3>Bienvenidos al sistema de hospitalizacion en casa</h3>-->
+<h2>Listado de Saludos en Varios Idiomas</h2>
 
 <table class="table">
-    @foreach (var medico in Model.ListaMedicos)
+  @foreach (var saludo in Model.Saludos)
+  {
+      <tr>
+        <td>@Saludo.EnEspanol</td>
+        <td>@Saludo.EnIngles</td>
+        <td>@Saludo.EnItaliano</td>
+      </tr>
+  }
+</table>
+<br>
+<!--
+<table class="table">
+    foreach (var medico in Model.ListaMedicos)
     {
         <tr>
-            <td>@medico</td>
+            <td>medico</td>
         </tr>
     }
 </table>
@@ -26,3 +39,4 @@
   <option value="2">Two</option>
   <option value="3">Three</option>
 </select>
+-->

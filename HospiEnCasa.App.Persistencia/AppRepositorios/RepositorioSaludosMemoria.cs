@@ -16,7 +16,7 @@ namespace HospiEnCasa.App.Persistencia.AppRepositorios
                 new Saludo{Id=3,EnEspanol="Buenas Noches",EnIngles="Good Evening",EnItaliano="Buona Notte"}
             };
         }
-        public IEnumerable<Saludo> GewAll()
+        public IEnumerable<Saludo> GetAll()
         {
             return saludos;
         }
