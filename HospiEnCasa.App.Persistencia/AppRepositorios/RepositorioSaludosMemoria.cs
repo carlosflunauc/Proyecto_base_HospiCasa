@@ -1,9 +1,10 @@
+using System.Runtime.InteropServices;
 using System.Collections.Generic;
 using HospiEnCasa.App.Dominio;
 
 namespace HospiEnCasa.App.Persistencia.AppRepositorios
 {
-    public class RepositorioSaludosMemoria : IRepositorioSaludos
+    public class RepositorioSaludosMemoria : IRepositorioSaludos    
     {
         List<Saludo> saludos;
 
@@ -19,6 +20,17 @@ namespace HospiEnCasa.App.Persistencia.AppRepositorios
         public IEnumerable<Saludo> GetAll()
         {
             return saludos;
+        }
+        public Saludo GetSaludoPorId(int saludoId)
+        {
+            return saludos.SingleOrDefault(s=> s.Id==saludoID);
+        }
+        public IEnumerable<Saludo> GetSaludoPorFiltro(string filtro=null){
+            var saludos = GetAll();
+            if (saludos != null)
+            {
+                
+            }
         }
     }
 }
