@@ -3,9 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
   </PropertyGroup>
-<ItemGroup>
-    <ProjectReference Include="..\HospiEnCasa.App.Dominio\HospiEnCasa.App.Dominio.csproj" />
-  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.9" />
@@ -19,8 +17,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
   </ItemGroup>
-
-  
-  
-
+  <ItemGroup>
+    <ProjectReference Include="..\HospiEnCasa.App.Dominio\HospiEnCasa.App.Dominio.csproj" />
+  </ItemGroup>
 </Project>
