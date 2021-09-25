@@ -18,8 +18,13 @@ namespace HospiEnCasa.App.Persistencia
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder
+               // Conexion del Compañero Pepito Perez
                // .UseSqlServer("Initial Catalog=HospiEnCasaData; Data Source=192.168.1.72:1433\\HOMELUNA; Integrated Security=true");
+               
+               // Conexion del Compañero Carlos Luna
                 .UseSqlServer("Initial Catalog=HospiEnCasaData; Data Source=HOMELUNA; Integrated Security=true");
+               
+               // Conexion de la compañera Luz
                //.UseSqlServer("Data Source = (localdb)\\HOMELUNA; Initial Catalog =HospiEncasatData");            
              }
         }
