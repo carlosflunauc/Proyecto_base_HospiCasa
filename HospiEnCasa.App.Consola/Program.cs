@@ -11,8 +11,8 @@ namespace HospiEnCasa.App.Consola
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World EF!");
-            //AddPaciente();
-            BuscarPaciente(1);
+            AddPaciente();
+            //BuscarPaciente(1);
             //AsignarMedico();
         }
 
