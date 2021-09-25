@@ -11,25 +11,21 @@ namespace HospiEnCasa.App.Frontend.Pages
 {
     public class ListModel : PageModel
     {
-        //private string[] medicos ={"Dr Pepito Perez","Dra Maria Felix","Dr Chapatin"};
         private readonly IRepositorioSaludos repositorioSaludos;
-
         public IEnumerable<Saludo> Saludos {get; set;}
+
+        [BindProperty(SupportsGet=true)]
+        public string FiltroBusqueda {get; set;}
 
         public ListModel(IRepositorioSaludos repositorioSaludos)
         {
             this.repositorioSaludos = repositorioSaludos;
             
         }
-
-    
-       // public List<string> ListaMedicos {get; set;}
-
         public void OnGet()
         {
-            //ListaMedicos = new List<string>();
-            //ListaMedicos.AddRange(medicos);
-            Saludos=repositorioSaludos.GetAll();
+            FiltroBusqueda=FiltroBusqueda;
+            Saludos=repositorioSaludos.GetSaludosPorFiltro(FiltroBusqueda);
         }
     }
 }

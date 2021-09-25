@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using HospiEnCasa.App.Dominio;
+using System;
+using System.Linq;
 
 namespace HospiEnCasa.App.Persistencia.AppRepositorios
 {
@@ -18,6 +20,25 @@ namespace HospiEnCasa.App.Persistencia.AppRepositorios
         }
         public IEnumerable<Saludo> GetAll()
         {
+            return saludos;
+        }
+        public Saludo GetSaludoPorId(int SaludoId)
+        {
+            return saludos.SingleOrDefault(s =>s.Id==SaludoId);
+        }
+        public IEnumerable<Saludo> GetSaludosPorFiltro(string filtro=null) 
+        {
+            var saludos = GetAll();
+            if (saludos != null)
+            {
+                if (!String.IsNullOrEmpty(filtro)) //si el filto tiene un valor
+                {
+                    saludos= saludos.Where(s => s.EnEspanol.Contains(filtro));
+                   /// <summary>
+                        ///filtranto los mensajes que se contienen en el filtro
+                   /// </summary>
+                }
+            }
             return saludos;
         }
     }
