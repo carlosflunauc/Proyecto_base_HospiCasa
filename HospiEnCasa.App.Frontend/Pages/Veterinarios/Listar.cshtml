@@ -1,0 +1,38 @@
+﻿@page
+@model HospiEnCasa.App.Frontend.Pages.ListarModel
+@{
+}
+
+<h4>Lista de Veterinarios</h4>
+
+<div>
+    <form method="GET">
+        <div class="form-group">
+            <p>
+                Filtro Busqueda
+                <input type="text" name="filtroBusqueda" asp-for="FiltroBusqueda"/>
+                <input type="submit" value="Buscar" />
+            </p>
+        </div>
+    </form>
+</div>
+<div>
+    <table class="table-primary">
+        @foreach (var saludo in Model.Saludos)
+        {
+            <tr>
+                <td>@saludo.EnEspanol</td>
+                <td>@saludo.EnIngles</td>
+                <td>@saludo.EnItaliano</td>
+                <td>
+                    <a class="btn btn-primary table-btn" asp-page="./Detalles" asp-route-saludoId="@saludo.Id">
+                    <i class="fas fa-info-cicle fa-lg"></i></a>
+                </td>
+                <td>
+                    <a class="btn btn-primary table-btn" asp-page="./Editar" asp-route-saludoId="@saludo.Id">
+                    <i class="fas fa-address-book fa-lg" aria-hidden="true"></i></a>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
