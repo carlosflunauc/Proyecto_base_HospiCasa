@@ -1,0 +1,47 @@
+﻿@page
+@using HospiEnCasa.App.Dominio
+@model HospiEnCasa.App.Frontend.Pages.Pacientes.CreateModel
+@{
+}
+<h1>Nuevo paciente</h1>
+<form method="post">
+    <div class="form-group">
+        <label asp-for="paciente.Nombre"></label>
+        <input asp-for="paciente.Nombre" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="paciente.Apellidos"></label>
+        <input asp-for="paciente.Apellidos" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="paciente.NumeroTelefono"></label>
+        <input asp-for="paciente.NumeroTelefono" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="paciente.Genero"></label>
+        <select asp-for="paciente.Genero" asp-items="Html.GetEnumSelectList<Genero>()" class="form-control">
+        </select>
+    </div>
+    <div class="form-group">
+        <label asp-for="paciente.Direccion"></label>
+        <input asp-for="paciente.Direccion" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="paciente.Latitud"></label>
+        <input asp-for="paciente.Latitud" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="paciente.Longitud"></label>
+        <input asp-for="paciente.Longitud" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="paciente.Ciudad"></label>
+        <input asp-for="paciente.Ciudad" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="paciente.FechaNacimiento"></label>
+        <input asp-for="paciente.FechaNacimiento" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Crear paciente</button>
+</form>
+<a class="btn btn-secondary" asp-page="./Index">Volver</a>

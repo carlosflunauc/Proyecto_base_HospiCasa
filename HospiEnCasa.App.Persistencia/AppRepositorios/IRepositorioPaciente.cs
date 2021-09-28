@@ -1,9 +1,5 @@
-
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using HospiEnCasa.App.Dominio;
-
 namespace HospiEnCasa.App.Persistencia
 {
     public interface IRepositorioPaciente
@@ -13,10 +9,7 @@ namespace HospiEnCasa.App.Persistencia
         Paciente UpdatePaciente(Paciente paciente);
         void DeletePaciente(int idPaciente);    
         Paciente GetPaciente(int idPaciente);
-        Medico AsignarMedico(int idPaciente, int idMedico); 
-
-
-    }
-
-
+        Medico AsignarMedico(int idPaciente, int idMedico);
+   }
 }
+
