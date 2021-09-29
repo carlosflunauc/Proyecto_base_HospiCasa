@@ -43,7 +43,7 @@ namespace HospiEnCasa.App.Persistencia
         {
             return _appContext.Pacientes;
         }
-
+            
         Paciente IRepositorioPaciente.GetPaciente(int idPaciente)
         {
             return _appContext.Pacientes.FirstOrDefault(p => p.Id == idPaciente);

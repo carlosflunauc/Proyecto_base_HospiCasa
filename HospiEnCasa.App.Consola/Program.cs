@@ -12,7 +12,7 @@ namespace HospiEnCasa.App.Consola
         {
             Console.WriteLine("Hello World EF!");
             //AddPaciente();
-            //BuscarPaciente(1);
+            BuscarPaciente(1);
             //AsignarMedico();
         }
 
@@ -37,7 +37,7 @@ namespace HospiEnCasa.App.Consola
         private static void BuscarPaciente(int idPaciente)
         {
             var paciente = _repoPaciente.GetPaciente(idPaciente);
-            Console.WriteLine(paciente.Nombre+" "+paciente.Apellidos);
+            Console.WriteLine(paciente.Nombre+" "+paciente.Apellidos+" "+paciente.FechaNacimiento);
         }
 
         private static void AsignarMedico()
