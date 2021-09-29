@@ -19,7 +19,7 @@ namespace HospiEnCasa.App.Persistencia
             {
                 optionsBuilder
  //.UseSqlServer("Initial Catalog=HospiEnCasaData; Data Source=192.168.1.72:1433\HOMELUNA; Integrated Security=true");
- //.UseSqlServer("Initial Catalog=HospiEnCasaData; Data Source=HOMELUNA; Integrated Security=true");
+ .UseSqlServer("Initial Catalog=HospiGrupo6; Data Source=HOMELUNA; Integrated Security=true");
                //.UseSqlServer("Data Source = (localdb)\\HOMELUNA; Initial Catalog =HospiEncasatData");            
              }
         }

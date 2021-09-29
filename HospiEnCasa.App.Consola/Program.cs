@@ -12,7 +12,7 @@ namespace HospiEnCasa.App.Consola
         {
             Console.WriteLine("Hello World EF!");
             //AddPaciente();
-            BuscarPaciente(1);
+            //BuscarPaciente(1);
             //AsignarMedico();
         }
 
