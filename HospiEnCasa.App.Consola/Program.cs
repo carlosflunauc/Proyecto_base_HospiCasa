@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using HospiEnCasa.App.Dominio;
 using HospiEnCasa.App.Persistencia;
 
@@ -12,7 +13,9 @@ namespace HospiEnCasa.App.Consola
         {
             Console.WriteLine("Hello World EF!");
             //AddPaciente();
-            BuscarPaciente(2);
+            //BuscarPaciente(3);
+            //EliminarPaciente(1);
+            MostrarPacientes();
             //AsignarMedico();
         }
 
@@ -39,6 +42,35 @@ namespace HospiEnCasa.App.Consola
             var paciente = _repoPaciente.GetPaciente(idPaciente);
             Console.WriteLine(paciente.Nombre+" "+paciente.Apellidos);
         }
+        private static void EliminarPaciente(int idPaciente)
+        {
+            _repoPaciente.DeletePaciente(idPaciente);
+            Console.WriteLine("Paciente Eliminado");
+        }
+        private static void MostrarPacientes()
+        {
+            IEnumerable<Paciente> pacientes = _repoPaciente.GetAllPacientes();
+            foreach (var paciente in pacientes)
+            {
+                Console.WriteLine(paciente.Nombre+" "+paciente.Apellidos);
+            }
+        }
+        private static void AddMedico()
+        {
+            var medico = new Medico
+            {
+                Nombre="Felipe",
+                Apellidos="Lopez",
+                NumeroTelefono="300245",
+                Genero= Genero.Masculino,
+                Especialidad="Ortopedista",
+                Codigo="1234",
+                RegistroRethus="7654"
+            };
+            _repoMedico.AddMedico(medico);
+        }
+
+
 
         private static void AsignarMedico()
         {

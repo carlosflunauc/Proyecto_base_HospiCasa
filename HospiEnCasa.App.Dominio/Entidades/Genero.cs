@@ -11,6 +11,5 @@ namespace HospiEnCasa.App.Dominio
         Intersexual,
         Pansexual,
         Transexual
-
     }
 }
