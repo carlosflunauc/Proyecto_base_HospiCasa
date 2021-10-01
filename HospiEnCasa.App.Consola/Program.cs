@@ -33,7 +33,6 @@ namespace HospiEnCasa.App.Consola
                 FechaNacimiento = new DateTime(1985, 05, 19)
             };
             _repoPaciente.AddPaciente(paciente);
-          
         }
 
         private static void BuscarPaciente(int idPaciente)

@@ -5,8 +5,11 @@ namespace HospiEnCasa.App.Persistencia
 
 {
     public interface IRepositorioMedico
-    {/*
+    {
          IEnumerable<Medico> GetAllMedicos();
-         Medico AddMedico(cd) */
+         Medico AddMedico(Medico medico);
+         Medico UpdateMedico(Medico medico);
+         void DeleteMedico(int idMedico);
+         Medico GetMedico(int idMedico); 
     }
 }
