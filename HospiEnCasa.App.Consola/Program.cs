@@ -22,9 +22,9 @@ namespace HospiEnCasa.App.Consola
         {
             var paciente = new Paciente
             {
-                Nombre = "Pepito",
-                Apellidos = "Perez",
-                NumeroTelefono = "310396",
+                Nombre = "Pepito Antonio",
+                Apellidos = "Perez Hurtado",
+                NumeroTelefono = "300456",
                 Genero = Genero.Masculino,
                 Direccion = "Calle 5 No 6-7",
                 Longitud = 5.07062F,

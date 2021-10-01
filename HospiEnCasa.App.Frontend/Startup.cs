@@ -26,6 +26,7 @@ namespace HospiEnCasa.App.Frontend
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            services.AddSingleton<IRepositorioMedico, RepositorioMedico>();
             services.AddSingleton<IRepositorioSaludos, RepositorioSaludosMemoria>();
             
         }
