@@ -9,6 +9,7 @@ namespace HospiEnCasa.App.Consola
     {
         private static IRepositorioPaciente _repoPaciente= new RepositorioPaciente(new Persistencia.AppContext());
         private static IRepositorioMedico _repoMedico = new RepositorioMedico();
+        private static IRepositorioSignoVital _repoSignoVital= new RepositorioSignoVital();
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World EF!");
@@ -17,7 +18,7 @@ namespace HospiEnCasa.App.Consola
             //EliminarPaciente(1);
             //MostrarPacientes();
             //AsignarMedico();
-            AddMedico();
+            //AddMedico();
         }
 
         private static void AddPaciente()
@@ -72,8 +73,28 @@ namespace HospiEnCasa.App.Consola
 
         private static void AsignarMedico()
         {
-            var medico = _repoPaciente.AsignarMedico(1,2);
+            var medico = _repoPaciente.AsignarMedico(3,5);
             Console.WriteLine(medico.Nombre+" "+medico.Apellidos);
+        }
+        private static void AddSignoVital()
+        {
+            var signoVital = new signoVital
+            {
+                FechaHora = new DateTime(2021,10,01),
+                Valor=36.5F,
+                Signo = TipoSigno.TemperaturaCorporal
+            };
+            _repoSignoVital.AddSignoVital(signoVital);
+        }
+        private static void AsignarSignoVital()
+        {
+            var signoVital = _repoPaciente.AddSignoVital(3,1);
+            Console.WriteLine(signoVital.Signo +" "+SignoVital.Valor);
+        }
+        private static void AsignarPaciente()
+        {
+            var paciente = _repoSignoVital.AsignarPaciente(3,4);
+            Console.WriteLine(paciente.Nombre+" "+paciente.Apellidos);
         }
     }
 }

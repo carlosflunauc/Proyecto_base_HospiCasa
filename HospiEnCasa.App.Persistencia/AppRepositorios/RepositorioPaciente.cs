@@ -7,6 +7,8 @@ namespace HospiEnCasa.App.Persistencia
 
     public class RepositorioPaciente : IRepositorioPaciente
     {
+        private readonly AppContext _appContext = new AppContext();
+        /*
         /// <summary>
         /// Referencia al contexto de Paciente
         /// </summary>
@@ -20,8 +22,7 @@ namespace HospiEnCasa.App.Persistencia
         {
             _appContext = appContext;
         }
-
-
+        */
         Paciente IRepositorioPaciente.AddPaciente(Paciente paciente)
         {
             var pacienteAdicionado = _appContext.Pacientes.Add(paciente);
@@ -46,7 +47,8 @@ namespace HospiEnCasa.App.Persistencia
 
         Paciente IRepositorioPaciente.GetPaciente(int idPaciente)
         {
-            return _appContext.Pacientes.FirstOrDefault(p => p.Id == idPaciente);
+          //  return _appContext.Pacientes.FirstOrDefault(p => p.Id == idPaciente);
+            return _appContext.Paciente.Find(idPaciente);
         }
 
         Paciente IRepositorioPaciente.UpdatePaciente(Paciente paciente)
@@ -87,6 +89,26 @@ namespace HospiEnCasa.App.Persistencia
                     _appContext.SaveChanges();
                 }
                 return medicoEncontrado;
+            }
+            return null;
+
+        }
+        SignoVital IRepositorioPaciente.AddSignoVital(int idPaciente, int IdSignoVital)
+        {
+            var pacienteEncontrado = _appContext.Pacientes
+            .Where(p =>p.Id ==idPaciente)
+            .Include(p => p.SignosVitales)
+            .SingleOrDefault();
+            if (pacienteEncontrado != null)
+            {
+                var signoVitalEncontrado = _appContext.SignosVitales.Find(IdSignoVital);
+                if (signoVitalEncontrado != null)
+                {
+                    pacienteEncontrado.SignosVitales.Add(signoVitalEncontrado);
+                    _appContext.SaveChanges();
+
+                }
+                return signoVitalEncontrado;
             }
             return null;
 

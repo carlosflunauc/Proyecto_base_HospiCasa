@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-
 using HospiEnCasa.App.Persistencia.AppRepositorios;
 
 namespace HospiEnCasa.App.Frontend
@@ -27,6 +26,7 @@ namespace HospiEnCasa.App.Frontend
         {
             services.AddRazorPages();
             services.AddSingleton<IRepositorioMedico, RepositorioMedico>();
+            services.AddSingleton<IRepositorioPaciente, RepositorioPaciente>();
             services.AddSingleton<IRepositorioSaludos, RepositorioSaludosMemoria>();
             
         }
