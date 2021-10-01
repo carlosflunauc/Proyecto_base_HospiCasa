@@ -1,9 +1,9 @@
 
 namespace HospiEnCasa.App.Dominio
-{
+{/*
     /// <summary>Class <c>Medico</c>
     /// Modela un Medico del equipo medico de apoyo 
-    /// </summary>   
+    /// </summary>   */
     public class Medico : Persona
     {
         /// Nombre de la especialidad medica del Médico  
